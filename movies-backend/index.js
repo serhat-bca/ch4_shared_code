@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require("dotenv").config(); // to reach environment variables
 
 // middleware
 // if there is json body passed with the request
@@ -18,7 +19,7 @@ const reqLogger = (req, res, next) => {
 };
 app.use(reqLogger);
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 let movies = [
   { id: 1, title: "Inception", watchlist: true },
