@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 // middleware
 // if there is json body passed with the request
 // it creates a body object and attach it to request object
+app.use(cors());
 app.use(express.json());
 // implement logger middleware
 const reqLogger = (req, res, next) => {
