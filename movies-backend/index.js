@@ -8,6 +8,8 @@ require("dotenv").config(); // to reach environment variables
 // it creates a body object and attach it to request object
 app.use(cors());
 app.use(express.json());
+// use dist folder in the backend
+app.use(express.static("dist"));
 // implement logger middleware
 const reqLogger = (req, res, next) => {
   console.log(`Request Method: ${req.method}`);
